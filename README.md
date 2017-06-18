@@ -2,7 +2,7 @@
 
 ## Important
 
-You must be running v19.5.2 or later firmware on the WINC1500 WiFi module of your board in order for MQTT transport to work. [See instructions here for updating your firmware] (https://www.arduino.cc/en/Tutorial/FirmwareUpdater).
+You must be running v19.5.2 or later firmware on the WINC1500 WiFi module of your board in order for MQTT transport to work. [See instructions here for updating your firmware](https://www.arduino.cc/en/Tutorial/FirmwareUpdater).
 
 
 ## About
