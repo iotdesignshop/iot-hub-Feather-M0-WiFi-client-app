@@ -1,15 +1,19 @@
 // Physical device information for board and sensor
+#ifdef ARDUINO_SAMD_FEATHER_M0
 #define DEVICE_ID "Feather M0 WiFi"
+#else
+#define DEVICE_ID "Arduino MKR1000"
+#endif
 
 // Pin layout configuration
 #define LED_PIN 13
 #define BME_CS 5
 
 // Interval time(ms) for sending message to IoT Hub
-#define INTERVAL 2000
+#define INTERVAL 30000    // 30 Seconds
 
 // If don't have a physical DHT sensor, can send simulated data to IoT hub
-#define SIMULATED_DATA false
+#define SIMULATED_DATA true
 
 #define TEMPERATURE_ALERT 30
 

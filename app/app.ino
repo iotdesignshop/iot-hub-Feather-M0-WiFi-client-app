@@ -1,11 +1,6 @@
 // Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-#include <Adafruit_WINC1500.h>
-#include <Adafruit_WINC1500Client.h>
-#include <Adafruit_WINC1500Server.h>
-#include <Adafruit_WINC1500SSLClient.h>
-#include <Adafruit_WINC1500Udp.h>
 #include <Adafruit_Sensor.h>
 #include <ArduinoJson.h>
 #include <Adafruit_BME280.h>
@@ -16,6 +11,10 @@
 #include <AzureIoTProtocol_HTTP.h>
 #include <Wire.h>
 #include <SPI.h>
+
+#include <WiFi101.h>
+#include <WiFiUdp.h>
+
 
 #include "NTPClient.h"
 
@@ -34,11 +33,14 @@ void blinkLED()
     digitalWrite(LED_PIN, LOW);
 }
 
-// Setup the WINC1500 connection with the pins above and the default hardware SPI.
-Adafruit_WINC1500 WiFi(WINC_CS, WINC_IRQ, WINC_RST);
-
 void initWifi()
 {
+
+    // Maintain compatibility with Adafruit Feather if compiling for that platform.
+#ifdef ARDUINO_SAMD_FEATHER_M0
+    WiFi.setPins(WINC_CS, WINC_IRQ, WINC_RST);
+#endif
+
     // Attempt to connect to Wifi network:
     LogInfo("Attempting to connect to SSID: %s", ssid);
 
@@ -63,7 +65,7 @@ void initWifi()
 
 void initTime()
 {
-    Adafruit_WINC1500UDP _udp;
+    WiFiUDP _udp;
 
     time_t epochTime = (time_t)-1;
 
@@ -95,7 +97,7 @@ void initTime()
     settimeofday(&tv, NULL);
 }
 
-static Adafruit_WINC1500SSLClient sslClient; // for Adafruit WINC1500
+static WiFiSSLClient sslClient; // for Adafruit WINC1500
 
 /*
  * The new version of AzureIoTHub library change the AzureIoTHubClient signature.

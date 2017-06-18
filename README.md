@@ -1,9 +1,15 @@
-# IoT Hub Feather M0 WiFi Client application
-[![Build Status](https://travis-ci.com/Azure-Samples/iot-hub-Feather-M0-WiFi-client-app.svg?token=5ZpmkzKtuWLEXMPjmJ6P&branch=master)](https://travis-ci.com/Azure-Samples/iot-hub-Feather-M0-WiFi-client-app) 
+# IoT Hub MKR1000 / Feather M0 WiFi Client application
+
+## Important
+
+You must be running v19.5.2 or later firmware on the WINC1500 WiFi module of your board in order for MQTT transport to work. [See instructions here for updating your firmware] (https://www.arduino.cc/en/Tutorial/FirmwareUpdater).
+
+
+## About
 
 > This repo contains the source code to help you get familiar with Azure IoT using the Azure IoT Adafruit Feather M0 WiFi Starter Kit. You will find the [lesson-based tutorials on Azure.com](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-adafruit-feather-m0-wifi-kit-arduino-get-started).
 
-This repo contains an arduino application that runs on board Feather M0 WiFi with a BME280 temperature&humidity sensor, and then sends these data to your IoT hub. At the same time, this application receives Cloud-to-Device message from your IoT hub, and takes actions according to the C2D command. 
+This repo contains an arduino application that runs on boards Arduino MKR1000 or Adafruit Feather M0 WiFi with a BME280 temperature&humidity sensor, and then sends these data to your IoT hub. At the same time, this application receives Cloud-to-Device message from your IoT hub, and takes actions according to the C2D command. 
 
 ## Install board with your Arduino IDE
 Follow [this page](https://learn.adafruit.com/adafruit-feather-m0-wifi-atwinc1500/using-with-arduino-ide) to install the board managers for your M0 WiFi.
@@ -11,7 +17,7 @@ Follow [this page](https://learn.adafruit.com/adafruit-feather-m0-wifi-atwinc150
 ## Install libraries
 Install the following libraries from `Sketch -> Include library -> Manage libraries`
 
-* Adafruit_WINC1500
+* Arduino WiFi 101
 * RTCZero
 * NTPClient
 * AzureIoTHub
