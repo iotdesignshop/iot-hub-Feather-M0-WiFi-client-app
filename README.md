@@ -7,7 +7,7 @@ You must be running v19.5.2 or later firmware on the WINC1500 WiFi module of you
 
 ## About
 
-> This repo contains the source code to help you get familiar with Azure IoT using the Azure IoT Adafruit Feather M0 WiFi Starter Kit. You will find the [lesson-based tutorials on Azure.com](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-adafruit-feather-m0-wifi-kit-arduino-get-started).
+> This repo contains the source code to help you get familiar with Azure IoT using an Arduino MKR1000 or Azure IoT Adafruit Feather M0 WiFi Starter Kit. You will find the [lesson-based tutorials on Azure.com](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-adafruit-feather-m0-wifi-kit-arduino-get-started).
 
 This repo contains an arduino application that runs on boards Arduino MKR1000 or Adafruit Feather M0 WiFi with a BME280 temperature&humidity sensor, and then sends these data to your IoT hub. At the same time, this application receives Cloud-to-Device message from your IoT hub, and takes actions according to the C2D command. 
 
